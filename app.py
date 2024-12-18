@@ -18,7 +18,7 @@ def use_jinja():
 
 
 if __name__ == '__main__':
-    server = Server(app.wsgi_app)
-    server.serve(port=5000)
-    # app.run(port=5000,debug=True, extra_files=['/static'])
+    # server = Server(app.wsgi_app)
+    # server.serve(port=5000)
+    app.run(port=5000,debug=True, extra_files=['/static'])
   
