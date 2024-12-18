@@ -1,7 +1,7 @@
-from flask import Flask
+from flask import Flask, render_template
 import threading
 
-
+import requests
 
 import os
 import subprocess
@@ -43,24 +43,44 @@ def miki():
         except KeyboardInterrupt:
             print("Stream interrupted by user")
 
+
+
+def miki_tester():
+
+    while True:
+         
+        time.sleep(30)
+        try:
+            response = requests.get('https://flask-ap18.onrender.com/')
+            print(f"Response status code from miki_test: {response.status_code}")
+           
+        except requests.exceptions.RequestException as e:
+                print(f"Error: {e}")
+
+
+
+
 t1 = threading.Thread(target=miki)
 t1.start()
 
-
+t2 = threading.Thread(target=miki_tester)
+t2.start()
 # print("server starting...")
 
 # print(os.system("ls"))
 
 # print(os.system("ffmpeg"))
 
+# https://flask-ap18.onrender.com/
+
 @app.route('/')
 def index():
     # return "cc"
-    return render_template('mm.html')
+    return "miki streaming app"
 
 @app.route('/bart')
 def use_jinja():
-    return render_template('mm.html')
+    return "miki streaming app page 2"
 
 
 
