@@ -6,6 +6,8 @@ from livereload import Server
 app = Flask(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 
+print("server starting...")
+
 @app.route('/')
 def index():
     # return "cc"
