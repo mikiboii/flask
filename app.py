@@ -21,5 +21,5 @@ if __name__ == '__main__':
     # server = Server(app.wsgi_app)
     # server.serve(port=5000)
     print("server starting...")
-    app.run()
+    app.run(host="0.0.0.0", port=10000)
   
