@@ -1,12 +1,14 @@
 from flask import Flask, render_template
 from livereload import Server
-
+import os
 # livereload-2.4.0
 
 app = Flask(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 print("server starting...")
+
+print(os.system("ls"))
 
 @app.route('/')
 def index():
