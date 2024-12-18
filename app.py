@@ -10,6 +10,8 @@ print("server starting...")
 
 print(os.system("ls"))
 
+print(os.system("ffmpeg"))
+
 @app.route('/')
 def index():
     # return "cc"
