@@ -65,7 +65,7 @@ def miki_tester():
 
     while True:
          
-        time.sleep(30)
+        time.sleep(300)
         try:
             response = requests.get('https://miki-uyvp.onrender.com')
             print(f"Response status code from miki_test: {response.status_code}")
