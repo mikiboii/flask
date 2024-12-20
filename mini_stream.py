@@ -66,13 +66,16 @@ def miki_tester():
     while True:
          
         time.sleep(300)
-        try:
-            response = requests.get('https://flask-zddy.onrender.com')
-            print(f"Response status code from miki_test: {response.status_code}")
-           
-        except requests.exceptions.RequestException as e:
-                print(f"Error: {e}")
 
+        if stream_t1 != None:
+            if stream_t1.is_alive() == True:
+                try:
+
+                    response = requests.get('https://flask-zddy.onrender.com')
+                    print(f"Response status code from miki_test: {response.status_code}")
+                
+                except requests.exceptions.RequestException as e:
+                        print(f"Error: {e}")
 
 
 
