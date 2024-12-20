@@ -84,6 +84,51 @@ t2 = threading.Thread(target=miki_tester)
 t2.start()
 
 
+def stream_restarter():
+
+    while True:
+         
+        time.sleep(5)
+
+        try:
+        
+            # p_thread.terminate()
+            # p_thread.wait()
+            # print("stoped thread")
+
+            # global is_running
+            # is_running = False
+
+
+            global stream_t1
+
+    
+
+            if stream_t1 == None:
+
+                stream_t1 = threading.Thread(target=miki)
+                stream_t1.start()
+                # return f"True"    
+            else:
+                if stream_t1.is_alive() == False:
+
+                    print("Stream stopped on its own ")
+                    stream_t1 = threading.Thread(target=miki)
+
+                    print("Now restarting...")
+                    stream_t1.start()
+        except:
+            pass
+       
+
+restarter_t1 = threading.Thread(target=stream_restarter)
+
+restarter_t1.start()
+
+
+
+
+
 # https://flask-ap18.onrender.com/
 
 @app.route('/')
@@ -111,7 +156,7 @@ def start_stream():
         return f"True"    
     else:
         if stream_t1.is_alive() == False:
-            stream_t1 = threading.Thread(target=miki)
+            # stream_t1 = threading.Thread(target=miki)
             stream_t1.start()
         return f"{stream_t1.is_alive()}"
 
