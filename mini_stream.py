@@ -67,7 +67,7 @@ def miki_tester():
          
         time.sleep(300)
         try:
-            response = requests.get('https://miki-adnd.onrender.com')
+            response = requests.get('https://flask-zddy.onrender.com')
             print(f"Response status code from miki_test: {response.status_code}")
            
         except requests.exceptions.RequestException as e:
