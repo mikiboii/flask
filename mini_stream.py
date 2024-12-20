@@ -59,7 +59,12 @@ def miki():
         except KeyboardInterrupt:
             print("Stream interrupted by user")
 
+        # subprocess.Popen(["sudo", "apt" , "update"])
 
+        # subprocess.Popen(["sudo", "apt" , "install", "ffmpeg", "-y"])
+
+#         sudo apt update
+# sudo apt install ffmpeg -y
 
 def miki_tester():
 
@@ -104,16 +109,39 @@ def stream_restarter():
 
 
             global stream_t1
+            global is_running
 
     
 
             if stream_t1 == None:
+
+                try:
+        
+                    p_thread.terminate()
+                    p_thread.wait()
+                    
+
+                    
+                    is_running = False
+                except:
+                    pass
 
                 stream_t1 = threading.Thread(target=miki)
                 stream_t1.start()
                 # return f"True"    
             else:
                 if stream_t1.is_alive() == False:
+
+                    try:
+        
+                        p_thread.terminate()
+                        p_thread.wait()
+                       
+
+                        # global is_running
+                        is_running = False
+                    except:
+                        pass
 
                     print("Stream stopped on its own ")
                     stream_t1 = threading.Thread(target=miki)
