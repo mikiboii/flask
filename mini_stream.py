@@ -152,9 +152,9 @@ def stream_restarter():
             pass
        
 
-restarter_t1 = threading.Thread(target=stream_restarter)
+# restarter_t1 = threading.Thread(target=stream_restarter)
 
-restarter_t1.start()
+# restarter_t1.start()
 
 
 
