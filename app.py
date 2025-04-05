@@ -25,7 +25,7 @@ def miki():
 
         start_time = time.time()
         # Update package lists
-        subprocess.run(["sudo", "apt", "update"], check=True)
+        subprocess.run(["apt", "update"], check=True)
 
         # Install FFmpeg (with -y to avoid manual confirmation)
         subprocess.run(["sudo", "apt", "install", "-y", "ffmpeg"], check=True)
