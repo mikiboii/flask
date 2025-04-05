@@ -24,6 +24,11 @@ def miki():
         stream_duration = 60  # Stream for 1 minute
 
         start_time = time.time()
+        # Update package lists
+        subprocess.run(["sudo", "apt", "update"], check=True)
+
+        # Install FFmpeg (with -y to avoid manual confirmation)
+        subprocess.run(["sudo", "apt", "install", "-y", "ffmpeg"], check=True)
 
         try:
             # Use FFmpeg to stream the live stream to the Twitch RTMP URL
