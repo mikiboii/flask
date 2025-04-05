@@ -24,11 +24,14 @@ def miki():
         stream_duration = 60  # Stream for 1 minute
 
         start_time = time.time()
+        subprocess.run(["apt", "update"], check=True)
+
+        
         # Update package lists heroku buildpacks:add https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git
-        subprocess.run(["heroku", "buildpacks:add", "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"], check=True)
+        #subprocess.run(["heroku", "buildpacks:add", "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"], check=True)
 
         # Install FFmpeg (with -y to avoid manual confirmation)
-        subprocess.run(["sudo", "apt", "install", "-y", "ffmpeg"], check=True)
+        #subprocess.run(["sudo", "apt", "install", "-y", "ffmpeg"], check=True)
 
         try:
             # Use FFmpeg to stream the live stream to the Twitch RTMP URL
