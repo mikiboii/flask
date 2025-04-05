@@ -76,7 +76,7 @@ t1.start()
 @app.route('/')
 def index():
     # return "cc"
-    return "miki streaming app"
+    return "miki streaming app new #2"
 
 @app.route('/bart')
 def use_jinja():
