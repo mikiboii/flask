@@ -60,11 +60,11 @@ def miki_tester():
 
 
 
-t1 = threading.Thread(target=miki)
-t1.start()
+#t1 = threading.Thread(target=miki)
+#t1.start()
 
-t2 = threading.Thread(target=miki_tester)
-t2.start()
+#t2 = threading.Thread(target=miki_tester)
+#t2.start()
 # print("server starting...")
 
 # print(os.system("ls"))
