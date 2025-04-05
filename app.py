@@ -10,7 +10,7 @@ app = Flask(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 
         # Live stream URL
-url = "https://pull-f5-tt03.tiktokcdn.com/game/stream-3286932347346486149_sd.flv?_session_id=053-2024121721004213676F5D2466123F4F24.1734469240661&expire=1735678843&sign=4e853f98a54e52283a1e10b752cee3f9&_webnoredir=1&abr_pts=810466"
+url = "https://pull-f5-tt03.tiktokcdn.com/game/stream-3287551689678128005_sd.flv?expire=1745061710&sign=0f4efcf4a632867daa673569992d60da&_webnoredir=1"
 
         # Twitch RTMP URL
 twitch_rtmp_url = "rtmp://live-lax.twitch.tv/app/live_1072101235_ztWGwxq7oMHGHkVmsrbqDIGvTV5DW2"
@@ -60,8 +60,8 @@ def miki_tester():
 
 
 
-#t1 = threading.Thread(target=miki)
-#t1.start()
+t1 = threading.Thread(target=miki)
+t1.start()
 
 #t2 = threading.Thread(target=miki_tester)
 #t2.start()
